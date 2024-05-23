@@ -14,6 +14,7 @@
 		E0CB4A0D2BFF23200021C478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0CB4A0C2BFF23200021C478 /* Assets.xcassets */; };
 		E0CB4A102BFF23200021C478 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E0CB4A0F2BFF23200021C478 /* Base */; };
 		E0CB4A182BFF274C0021C478 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB4A172BFF274C0021C478 /* SettingTableViewController.swift */; };
+		E0CB4A1E2BFF46C70021C478 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB4A1D2BFF46C70021C478 /* ShoppingListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E0CB4A0F2BFF23200021C478 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0CB4A112BFF23200021C478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0CB4A172BFF274C0021C478 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		E0CB4A1D2BFF46C70021C478 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				E0CB4A0C2BFF23200021C478 /* Assets.xcassets */,
 				E0CB4A0E2BFF23200021C478 /* LaunchScreen.storyboard */,
 				E0CB4A112BFF23200021C478 /* Info.plist */,
+				E0CB4A1D2BFF46C70021C478 /* ShoppingListViewController.swift */,
 			);
 			path = TableView0523;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				E0CB4A182BFF274C0021C478 /* SettingTableViewController.swift in Sources */,
 				E0CB4A082BFF231F0021C478 /* ViewController.swift in Sources */,
+				E0CB4A1E2BFF46C70021C478 /* ShoppingListViewController.swift in Sources */,
 				E0CB4A042BFF231F0021C478 /* AppDelegate.swift in Sources */,
 				E0CB4A062BFF231F0021C478 /* SceneDelegate.swift in Sources */,
 			);
