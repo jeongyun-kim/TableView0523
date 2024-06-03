@@ -43,7 +43,7 @@ class SettingTableViewController: UITableViewController {
     
     // 각 섹션 내 행의 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 각 섹션 타이틀이 불러오는 옵션들의 개수만큼
+        // 각 섹션의 헤더뷰 타이틀이 불러오는 옵션들의 개수만큼
         return SettingOptions.allCases[section].options.count
     }
     
