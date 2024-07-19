@@ -8,34 +8,24 @@
 import UIKit
 import SnapKit
 
-final class SettingHeaderView: UICollectionReusableView {
+final class SettingHeaderView: BaseHeaderFooterView {
     static var elementKind: String { return UICollectionView.elementKindSectionHeader }
     
     let settingLabel = UILabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupHierarchy()
-        setupConstraints()
-        configureLayout()
-    }
-    
-    private func setupHierarchy() {
+    override func setupHierarchy() {
         addSubview(settingLabel)
     }
     
-    private func setupConstraints() {
+    override func setupConstraints() {
         settingLabel.snp.makeConstraints { make in
+            make.verticalEdges.equalTo(safeAreaLayoutGuide).inset(8)
             make.leading.equalTo(safeAreaLayoutGuide).offset(16)
         }
     }
     
-    private func configureLayout() {
+    override func configureLayout() {
         settingLabel.font = .systemFont(ofSize: 14)
         settingLabel.textColor = .lightGray
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
