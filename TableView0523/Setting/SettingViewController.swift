@@ -11,8 +11,26 @@ import SnapKit
 final class SettingViewController: UIViewController {
     
     enum Section: String, CaseIterable {
-        case mode = "모드 설정"
-        case share = ""
+        case mode
+        case share
+        
+        var header: String {
+            switch self {
+            case .mode:
+                return "모드 설정"
+            case .share:
+                return ""
+            }
+        }
+        
+        var footer: String {
+            switch self {
+            case .mode:
+                return "집중 모드에서는 경고 및 알림 소리가 울리지 않습니다."
+            case .share:
+                return "이 기기에서 집중 모드를 켜면 사용자의 다른 기기에서도 집중 모드가 켜집니다."
+            }
+        }
     }
     
     private let list = SettingList()
@@ -25,6 +43,7 @@ final class SettingViewController: UIViewController {
         setupConstraints()
         setupUI()
         configureDataSource()
+        configureHeaderView()
         updateSnapshot()
     }
     
@@ -40,6 +59,7 @@ final class SettingViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .systemBackground
+        navigationItem.title = "집중 모드"
     }
     
     private func configureDataSource() {
@@ -70,6 +90,20 @@ final class SettingViewController: UIViewController {
         })
     }
     
+    private func configureHeaderView() {
+        var headerRegistration: UICollectionView.SupplementaryRegistration<SettingHeaderView>!
+        
+        headerRegistration = UICollectionView.SupplementaryRegistration(elementKind: SettingHeaderView.elementKind, handler: { [weak self] supplementaryView, elementKind, indexPath in
+            guard let self else { return }
+            let headerTitle = self.dataSource.snapshot().sectionIdentifiers[indexPath.section].header
+            supplementaryView.settingLabel.text = headerTitle
+        })
+        
+        dataSource.supplementaryViewProvider = { collectionView, identifier, indexPath in
+            return collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: indexPath)
+        }
+    }
+    
     private func updateSnapshot() {
         var snapshot = dataSource.snapshot()
         snapshot.appendSections(Section.allCases)
@@ -80,7 +114,11 @@ final class SettingViewController: UIViewController {
     
     private func layout() -> UICollectionViewLayout {
         // 시스템 셀 등록
-        let config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        // 헤더 모드 설정
+        config.headerMode = .supplementary
+        // 헤더 상단 여백
+        config.headerTopPadding = 5
         let layout = UICollectionViewCompositionalLayout.list(using: config)
         return layout
     }
