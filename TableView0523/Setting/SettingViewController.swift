@@ -43,7 +43,7 @@ final class SettingViewController: UIViewController {
         setupConstraints()
         setupUI()
         configureDataSource()
-        configureHeaderView()
+        configureHeaderFooterView()
         updateSnapshot()
     }
     
@@ -90,7 +90,7 @@ final class SettingViewController: UIViewController {
         })
     }
     
-    private func configureHeaderView() {
+    private func configureHeaderFooterView() {
         var headerRegistration: UICollectionView.SupplementaryRegistration<SettingHeaderView>!
         
         headerRegistration = UICollectionView.SupplementaryRegistration(elementKind: SettingHeaderView.elementKind, handler: { [weak self] supplementaryView, elementKind, indexPath in
@@ -99,8 +99,20 @@ final class SettingViewController: UIViewController {
             supplementaryView.settingLabel.text = headerTitle
         })
         
-        dataSource.supplementaryViewProvider = { collectionView, identifier, indexPath in
-            return collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: indexPath)
+        var footerRegistration: UICollectionView.SupplementaryRegistration<SettingFooterView>!
+        
+        footerRegistration = UICollectionView.SupplementaryRegistration(elementKind: SettingFooterView.elementKind, handler: { [weak self] supplementaryView, elementKind, indexPath in
+            guard let self else { return }
+            let footerTitle = self.dataSource.snapshot().sectionIdentifiers[indexPath.section].footer
+            supplementaryView.footerLabel.text = footerTitle
+        })
+        
+        dataSource.supplementaryViewProvider = { collectionView, elementKind, indexPath in
+            if elementKind == SettingHeaderView.elementKind {
+                return collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: indexPath)
+            } else {
+                return collectionView.dequeueConfiguredReusableSupplementary(using: footerRegistration, for: indexPath)
+            }
         }
     }
     
@@ -119,6 +131,8 @@ final class SettingViewController: UIViewController {
         config.headerMode = .supplementary
         // 헤더 상단 여백
         config.headerTopPadding = 5
+        // 푸터 모드 설정
+        config.footerMode = .supplementary
         let layout = UICollectionViewCompositionalLayout.list(using: config)
         return layout
     }
