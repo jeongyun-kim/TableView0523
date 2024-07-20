@@ -53,13 +53,20 @@ final class SettingViewController: UIViewController {
     
     private func setupConstraints() {
         collectionView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.edges.equalTo(view)
         }
     }
     
     private func setupUI() {
         view.backgroundColor = .systemBackground
         navigationItem.title = "집중 모드"
+        let rightItem = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(rightBtnTapped))
+        navigationItem.rightBarButtonItem = rightItem
+    }
+    
+    @objc private func rightBtnTapped(_ sender: UIButton) {
+        let vc = ShoppingViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func configureDataSource() {

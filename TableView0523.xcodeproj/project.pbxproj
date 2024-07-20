@@ -13,6 +13,8 @@
 		E0609A412C4A114F0008E50A /* SettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0609A402C4A114F0008E50A /* SettingHeaderView.swift */; };
 		E0609A432C4A1E380008E50A /* SettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0609A422C4A1E380008E50A /* SettingFooterView.swift */; };
 		E0609A452C4A1EF30008E50A /* BaseHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0609A442C4A1EF30008E50A /* BaseHeaderFooterView.swift */; };
+		E0609A482C4B91CE0008E50A /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0609A472C4B91CE0008E50A /* ShoppingViewController.swift */; };
+		E0609A4A2C4B951C0008E50A /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0609A492C4B951C0008E50A /* Shopping.swift */; };
 		E0CB4A042BFF231F0021C478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB4A032BFF231F0021C478 /* AppDelegate.swift */; };
 		E0CB4A062BFF231F0021C478 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB4A052BFF231F0021C478 /* SceneDelegate.swift */; };
 		E0CB4A082BFF231F0021C478 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB4A072BFF231F0021C478 /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 		E0609A402C4A114F0008E50A /* SettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingHeaderView.swift; sourceTree = "<group>"; };
 		E0609A422C4A1E380008E50A /* SettingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFooterView.swift; sourceTree = "<group>"; };
 		E0609A442C4A1EF30008E50A /* BaseHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderFooterView.swift; sourceTree = "<group>"; };
+		E0609A472C4B91CE0008E50A /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		E0609A492C4B951C0008E50A /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
 		E0CB4A002BFF231F0021C478 /* TableView0523.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView0523.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CB4A032BFF231F0021C478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CB4A052BFF231F0021C478 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,15 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		E0609A462C4B91C10008E50A /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				E0609A472C4B91CE0008E50A /* ShoppingViewController.swift */,
+				E0609A492C4B951C0008E50A /* Shopping.swift */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
 		E0CB49F72BFF231F0021C478 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +97,7 @@
 		E0CB4A022BFF231F0021C478 /* TableView0523 */ = {
 			isa = PBXGroup;
 			children = (
+				E0609A462C4B91C10008E50A /* Shopping */,
 				E0609A3C2C4953300008E50A /* Setting */,
 				E0CB4A032BFF231F0021C478 /* AppDelegate.swift */,
 				E0CB4A052BFF231F0021C478 /* SceneDelegate.swift */,
@@ -175,6 +189,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0609A482C4B91CE0008E50A /* ShoppingViewController.swift in Sources */,
+				E0609A4A2C4B951C0008E50A /* Shopping.swift in Sources */,
 				E0CB4A182BFF274C0021C478 /* SettingTableViewController.swift in Sources */,
 				E0CB4A082BFF231F0021C478 /* ViewController.swift in Sources */,
 				E0CB4A1E2BFF46C70021C478 /* ShoppingListViewController.swift in Sources */,
